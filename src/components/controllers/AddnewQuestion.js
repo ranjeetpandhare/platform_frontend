@@ -18,7 +18,7 @@ const AddnewQuestion = (props) => {
     //submit data post data from serverside
     const onSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:5000/api/v1/question/add", { userId: parseInt(localStorage.getItem("userId")), qId: props.match.params.id.toString(), qText: question, postedAt: new Date().toLocaleString() })
+        axios.post("https://newbackendnode.herokuapp.com/api/v1/question/add", { userId: parseInt(localStorage.getItem("userId")), qId: props.match.params.id.toString(), qText: question, postedAt: new Date().toLocaleString() })
             .then(res => {
                 history.push("/QuestionDetails");
             })

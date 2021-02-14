@@ -13,7 +13,7 @@ const Login = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(userName, " ", password, " ");
-        axios.get(`http://localhost:5000/api/v1/signup/${userName}`)
+        axios.get(`https://newbackendnode.herokuapp.com/api/v1/signup/${userName}`)
             .then(res => {
                 if (res.data[0].password == password) {
                     localStorage.setItem("userId", res.data[0].userId);

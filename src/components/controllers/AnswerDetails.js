@@ -19,7 +19,7 @@ const AnswerDetails = (props) => {
     }, []);
 
     const loadAnswers = async () => {
-        const res = await axios.get(`http://localhost:5000/api/v1/answer`);
+        const res = await axios.get(`https://newbackendnode.herokuapp.com/api/v1/answer`);
         setansId((res.data.length + 1).toString())
     };
 
@@ -27,7 +27,7 @@ const AnswerDetails = (props) => {
     const onSubmit = (e) => {
         e.preventDefault();
         const answerAllField = { ansText: newanswer, userId: parseInt(localStorage.getItem("userId")), postedAt: new Date().toLocaleString(), ansId: ansId, qId: props.match.params.id.toString() };
-        axios.post("http://localhost:5000/api/v1/answer", answerAllField)
+        axios.post("https://newbackendnode.herokuapp.com/api/v1/answer", answerAllField)
             .then(res => {
                 history.push("/QuestionDetails")
             })
@@ -40,7 +40,7 @@ const AnswerDetails = (props) => {
     }
 
     const loadRestaurtant = async () => {
-        const res = await axios.get(`http://localhost:5000/api/v1/question/question_answer_list/${props.match.params.id}`);
+        const res = await axios.get(`https://newbackendnode.herokuapp.com/api/v1/question/question_answer_list/${props.match.params.id}`);
         setAnswer(res.data);
     };
     return (

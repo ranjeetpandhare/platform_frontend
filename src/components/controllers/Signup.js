@@ -60,7 +60,7 @@ const Signup = () => {
         const isvalid = formValidation();
         const allDataField = { fname: fname, lname: lname, email: email, phone: phone, address: address, userName: userName, password: password }
         if (isvalid) {
-            axios.post("http://localhost:5000/api/v1/signup", allDataField)
+            axios.post("https://newbackendnode.herokuapp.com/api/v1/signup", allDataField)
                 .then(res => {
                     alert("New user add successfully.. ");
                     history.push("/Login");

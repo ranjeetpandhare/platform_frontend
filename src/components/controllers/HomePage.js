@@ -17,7 +17,7 @@ const HomePage = () => {
     }, [])
 
     const loadDataQuestion = async () => {
-        const result = await axios.get("http://localhost:5000/api/v1/question/question_answer_list_homepage");
+        const result = await axios.get("https://newbackendnode.herokuapp.com/api/v1/question/question_answer_list_homepage");
         setQuestionanslist(result.data.reverse());
     }
     const filterData = questionanslist.filter(questionans => {
